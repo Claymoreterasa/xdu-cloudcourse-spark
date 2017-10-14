@@ -80,22 +80,21 @@
 
 从hbase Record表中读取所有记录
 1. 自身以地点为键进行join操作，计算除自身外的车辆是否相遇
+```
 (placeId，(eid，time)) join (placeId，(eid，time)) ->
 (placeId, (eid1, time1, eid2, time2)) filter (eid1 != eid2 && |time1 - time2| < 60) ->
 ((eid1, eid2), 1) reduceByKey ->
 ((eid1, eid2), count)
-
+```
 2. 以地点为键进行分组，同一组内的数据按照时间进行排序，遍历整个列表，看哪些车辆之间满足时间间隔
 
 #### 表格式
 
 表名：MeetCount
 
-行健 | 列族 | 列 | 值
-
----|---|---|---
-
-车辆编号(eid) | info  |  相遇车辆编号(eid)  | 相遇次数
+|行健|列族|列|值|
+|---|---|---|---
+|车辆编号(eid)|info|相遇车辆编号(eid)|相遇次数
 
 #### 查询结果
 命令行展示：hbase shell中能查询出记录
