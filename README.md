@@ -66,6 +66,7 @@ placeId | info | address | latitude | longitude | count |
 
 #### 查询结果
 命令行展示：hbase shell中能查询出记录
+
 前端展示（加分）：获取每个地点的过车数量，（在地图上标记每个地点的过车数量和地址等信息[进阶]），需要在xdu-cloudcourse-web实现hbase查询接口，并实现一个页面，以表格显示查询结果
 
 ### 2. 加分（相遇次数统计）
@@ -94,6 +95,7 @@ placeId | info | address | latitude | longitude | count |
 
 #### 查询结果
 命令行展示：hbase shell中能查询出记录
+
 前端展示（加分）：指定车辆编号，查询它相遇的所有车辆编号和相遇次数， 需要在xdu-cloudcourse-web实现hbase查询接口，并实现一个页面，以表格显示查询结果
 
 
