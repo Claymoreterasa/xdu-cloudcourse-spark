@@ -60,9 +60,12 @@
 #### 表格式
 
 表名：VehicleCount
+
 行健 | 列族 | 列1 | 列2 | 列3 | 列4
+
 ---|---|---|---|---|---
-placeId | info | address | latitude | longitude | count |
+
+placeId | info | address | latitude | longitude | count
 
 #### 查询结果
 命令行展示：hbase shell中能查询出记录
@@ -89,8 +92,11 @@ placeId | info | address | latitude | longitude | count |
 #### 表格式
 
 表名：MeetCount
+
 行健 | 列族 | 列 | 值
+
 ---|---|---|---
+
 车辆编号(eid) | info  |  相遇车辆编号(eid)  | 相遇次数
 
 #### 查询结果
@@ -107,11 +113,15 @@ placeId | info | address | latitude | longitude | count |
 
 ### 2 VehicleCount运行无反应
 如果运行程序后，输入下面三行文字就停住不动，请检查本机上hosts中是否配置了集群中hbase集群的ip地址,并保证本机防火墙关闭，且能ping通集群
+
 windows 文件地址为 C:\Windows\System32\drivers\etc\hosts
+
 centos 文件地址为 /etc/hosts
+```
 log4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+```
 
 ### **其他未列错误或问题，请先自行尝试搜索引擎解决。**
 
