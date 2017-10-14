@@ -61,11 +61,9 @@
 
 表名：VehicleCount
 
-行健 | 列族 | 列1 | 列2 | 列3 | 列4
-
----|---|---|---|---|---
-
-placeId | info | address | latitude | longitude | count
+|行健|列族|列1|列2|列3|列4|
+|---|---|---|---|---|---
+|placeId|info|address|latitude|longitude|count
 
 #### 查询结果
 命令行展示：hbase shell中能查询出记录
