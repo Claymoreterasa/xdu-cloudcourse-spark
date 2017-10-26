@@ -36,8 +36,8 @@ public class VehicleCount {
             sc.newAPIHadoopRDD(inputHbaseConf, TableInputFormat.class, ImmutableBytesWritable.class, Result.class)
                     .mapToPair((Tuple2<ImmutableBytesWritable, Result> input) -> {
                                 String row = Bytes.toString(input._2.getRow());
-                                String placeId = row.split("@@")[0];
-                                String eid = row.split("##")[1];
+                                String placeId = row.split("##")[0];
+                                String eid = row.split("##")[2];
                                 String address = Bytes.toString(input._2.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("address")));
                                 String latitude = Bytes.toString(input._2.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("latitude")));
                                 String longitude = Bytes.toString(input._2.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("longitude")));

@@ -32,8 +32,8 @@ object VehicleCount {
       sc.newAPIHadoopRDD(inputHbaseConf, classOf[TableInputFormat], classOf[ImmutableBytesWritable], classOf[Result])
         .map { case (_, input) => {
           val row: String = Bytes.toString(input.getRow)
-          val placeId: String = row.split("@@")(0)
-          val eid: String = row.split("##")(1)
+          val placeId: String = row.split("##")(0)
+          val eid: String = row.split("##")(2)
           val address: String = Bytes.toString(input.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("address")))
           val latitude: String = Bytes.toString(input.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("latitude")))
           val longitude: String = Bytes.toString(input.getValue(Bytes.toBytes(columnFamilyName), Bytes.toBytes("longitude")))
